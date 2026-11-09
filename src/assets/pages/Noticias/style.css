@@ -1,0 +1,149 @@
+.container-eventos {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.header-eventos {
+  background-color: #fdfbf7;
+  border: 1px solid #ebe8e1;
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.card-tag {
+  display: block;
+  color: #a84e1b;
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-titulo {
+  color: #0b192c;
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.card-descricao {
+  color: #4b5563;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Filtros */
+.filtros-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.btn-filtro {
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #4b5563;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.btn-filtro.ativo,
+.btn-filtro:hover {
+  background: #0b192c;
+  color: #ffffff;
+  border-color: #0b192c;
+}
+
+/* Grid de Cards */
+.grid-eventos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card-evento {
+  background: #ffffff;
+  border: 1px solid #ebe8e1;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-evento:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-evento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badge-categoria {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.evento-data {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.card-evento h3 {
+  font-size: 1.15rem;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.evento-local {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.evento-desc {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.4;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.btn-inscrever {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #0b192c;
+  border-radius: 8px;
+  background: transparent;
+  color: #0b192c;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-inscrever:hover {
+  background: #f3f4f6;
+}
+
+.btn-inscrever.inscrito {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+}
