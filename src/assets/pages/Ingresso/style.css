@@ -1,0 +1,30 @@
+.botoes-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-ingresso {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #333333;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-ingresso:hover {
+  border-color: #0070f3;
+}
+
+.btn-ingresso.ativo {
+  background-color: #0070f3;
+  color: #ffffff;
+  border-color: #0070f3;
+}
+
+.resultado {
+  margin-top: 20px;
+}
