@@ -13,6 +13,8 @@ export function Header(){
 
                 <nav>
                     <NavLink to="/">Home</NavLink>
+                    <NavLink to="/sobre">Sobre</NavLink>
+                    <NavLink to="/ingresso">Ingresso</NavLink>
                 </nav>
             </div>
         </header>
