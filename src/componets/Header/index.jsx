@@ -15,6 +15,10 @@ export function Header(){
                     <NavLink to="/">Home</NavLink>
                     <NavLink to="/sobre">Sobre</NavLink>
                     <NavLink to="/ingresso">Ingresso</NavLink>
+                    <NavLink to="/cursos">Cursos</NavLink>
+                    <NavLink to="/contato">Contato</NavLink>
+                    <NavLink to="/Noticias">Notícias</NavLink>
+
                 </nav>
             </div>
         </header>
