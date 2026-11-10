@@ -1,0 +1,328 @@
+.cursos-page {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero */
+.cursos-hero {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: #ffffff;
+  padding: 60px 0 65px;
+  text-align: center;
+}
+
+.cursos-hero-inner {
+  width: min(850px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.cursos-hero h1 {
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 16px 0 16px;
+  color: #ffffff;
+}
+
+.cursos-hero p {
+  color: #cbd5e1;
+  font-size: 1.12rem;
+  line-height: 1.7;
+  margin: 0 auto 30px;
+}
+
+.cursos-search-wrapper {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.cursos-search-input {
+  width: 100%;
+  padding: 14px 22px;
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--color-primary-dark);
+  font-size: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  outline: none;
+  transition: all 180ms ease;
+}
+
+.cursos-search-input:focus {
+  border-color: var(--color-accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.25);
+}
+
+/* Catálogo */
+.cursos-catalogo {
+  padding: 50px 0 80px;
+  background-color: var(--color-bg);
+}
+
+.cursos-catalogo-inner {
+  width: min(var(--content-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.cursos-filtros-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filtros-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+}
+
+.filtros-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filtro-pill {
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  color: var(--color-text);
+  padding: 7px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.filtro-pill:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.filtro-pill.ativo {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 8px rgba(234, 88, 12, 0.25);
+}
+
+.cursos-resultados-info {
+  margin-bottom: 30px;
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+}
+
+/* Grid de Cursos */
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.curso-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: all 220ms ease;
+}
+
+.curso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: #cbd5e1;
+}
+
+.curso-card-image-box {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+}
+
+.curso-card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.curso-card:hover .curso-card-image-box img {
+  transform: scale(1.05);
+}
+
+.curso-badge-mec {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(15, 41, 74, 0.9);
+  color: #fbbf24;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(4px);
+}
+
+.curso-badge-grau {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 750;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.curso-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.curso-area-tag {
+  color: var(--color-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.curso-card-content h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.curso-desc {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.curso-metas {
+  display: grid;
+  gap: 6px;
+  background: var(--color-surface-subtle);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.curso-card-footer {
+  margin-top: auto;
+}
+
+.curso-btn-inscrever {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 11px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: all 160ms ease;
+}
+
+.curso-btn-inscrever:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+/* Sem resultado */
+.cursos-sem-resultado {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+}
+
+.sem-resultado-icone {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Suporte / CTA */
+.cursos-suporte-section {
+  background: #ffffff;
+  border-top: 1px solid var(--color-border);
+  padding: 60px 0;
+}
+
+.cursos-suporte-inner {
+  width: min(var(--content-width), calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.suporte-copy {
+  max-width: 620px;
+}
+
+.suporte-copy h2 {
+  font-size: 1.65rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.suporte-copy p {
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.suporte-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .cursos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cursos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cursos-suporte-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .suporte-actions {
+    justify-content: center;
+  }
+}

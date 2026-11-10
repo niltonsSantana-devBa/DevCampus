@@ -1,63 +1,16 @@
 import { useState } from "react";
-import "./style.css";
+import { EVENTOS_DADOS } from "../../data/eventos.js";
+import "./styles.css";
 
-const EVENTOS_DADOS = [
-  {
-    id: 1,
-    titulo: "Jam Session & Ensaio da Equipe de Música",
-    categoria: "Música",
-    data: "14 de Novembro",
-    horario: "17:30",
-    local: "Auditório Bloco B",
-    descricao: "Alinhamento das próximas apresentações do campus e ensaio aberto. Traga seu instrumento ou venha apenas curtir o som!",
-  },
-  {
-    id: 2,
-    titulo: "Hackathon TasteTech: IA na Culinária",
-    categoria: "Tecnologia",
-    data: "18 de Novembro",
-    horario: "09:00",
-    local: "Laboratório de Inovação 04",
-    descricao: "Maratona de código para criar algoritmos de geração de receitas sustentáveis, harmonização de pratos e combate ao desperdício.",
-  },
-  {
-    id: 3,
-    titulo: "Copa Intercursos 2026: Futsal & E-Sports",
-    categoria: "Esportes",
-    data: "22 de Novembro",
-    horario: "13:00",
-    local: "Ginásio Poliesportivo",
-    descricao: "Abertura do torneio do campus com modalidades tradicionais e arena gamer com partidas ao vivo de Valorant e FIFA.",
-  },
-  {
-    id: 4,
-    titulo: "Noite Astrofísica: Observação com Telescópio & VR",
-    categoria: "Ciência",
-    data: "25 de Novembro",
-    horario: "19:30",
-    local: "Praça Central do Campus",
-    descricao: "Observação guiada de corpos celestes na praça central + óculos de realidade virtual simulando caminhada em Marte.",
-  },
-  {
-    id: 5,
-    titulo: "Café com Founders: Do TCC à Startup",
-    categoria: "Carreira",
-    data: "01 de Dezembro",
-    horario: "16:00",
-    local: "Espaço Coworking",
-    descricao: "Bate-papo exclusivo com ex-alunos que transformaram projetos acadêmicos em empresas milionárias.",
-  }
-];
-
-export function EventosCampus() {
+export function Noticias() {
   const [categoriaAtiva, setCategoriaAtiva] = useState("Todos");
   const [inscritos, setInscritos] = useState([]);
 
-  const categorias = ["Todos", "Música", "Tecnologia", "Esportes", "Ciência", "Carreira"];
+  const categorias = ["Todos", "Tecnologia", "Cultura", "Esportes", "Ciência", "Carreira"];
 
-  const eventosFiltrados = categoriaAtiva === "Todos" 
-    ? EVENTOS_DADOS 
-    : EVENTOS_DADOS.filter(e => e.categoria === categoriaAtiva);
+  const eventosFiltrados = categoriaAtiva === "Todos"
+    ? EVENTOS_DADOS
+    : EVENTOS_DADOS.filter((e) => e.categoria === categoriaAtiva);
 
   const toggleInscricao = (id) => {
     setInscritos((prev) =>
@@ -66,57 +19,81 @@ export function EventosCampus() {
   };
 
   return (
-    <section className="container-eventos">
-      <header className="header-eventos">
-        <span className="card-tag">/noticias</span>
-        <h2 className="card-titulo">Notícias & Eventos</h2>
-        <p className="card-descricao">
-          Fique por dentro de tudo o que está acontecendo no campus.
-        </p>
-      </header>
+    <main className="noticias-page">
+      {/* Hero da Página */}
+      <section className="noticias-hero">
+        <div className="noticias-hero-inner">
+          <span className="eyebrow" style={{ color: "#ffedd5" }}>Vida no Campus</span>
+          <h1>Notícias & Eventos Acadêmicos</h1>
+          <p>
+            Acompanhe o que acontece na Faculdade Horizonte: palestras, workshops,
+            competições esportivas, hackathons e atividades culturais abertas à comunidade.
+          </p>
+        </div>
+      </section>
 
-      {/* Filtro por Categorias */}
-      <div className="filtros-container">
-        {categorias.map((cat) => (
-          <button
-            key={cat}
-            type="button"
-            className={`btn-filtro ${categoriaAtiva === cat ? "ativo" : ""}`}
-            onClick={() => setCategoriaAtiva(cat)}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
+      <section className="noticias-content">
+        <div className="noticias-content-inner">
+          {/* Barra de Filtros */}
+          <div className="noticias-filtros-bar">
+            <span className="filtros-titulo">Categorias:</span>
+            <div className="filtros-lista">
+              {categorias.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  aria-pressed={categoriaAtiva === cat}
+                  className={`btn-filtro ${categoriaAtiva === cat ? "ativo" : ""}`}
+                  onClick={() => setCategoriaAtiva(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          </div>
 
-      {/* Lista de Cards de Eventos */}
-      <div className="grid-eventos">
-        {eventosFiltrados.map((evento) => {
-          const estaInscrito = inscritos.includes(evento.id);
-          return (
-            <article key={evento.id} className="card-evento">
-              <div className="card-evento-header">
-                <span className="badge-categoria">
-                  {evento.categoria}
-                </span>
-                <span className="evento-data">{evento.data} • {evento.horario}</span>
-              </div>
+          {/* Grid de Cards dos Eventos com Foto */}
+          <div className="grid-eventos">
+            {eventosFiltrados.map((evento) => {
+              const estaInscrito = inscritos.includes(evento.id);
 
-              <h3>{evento.titulo}</h3>
-              <p className="evento-local">📍 {evento.local}</p>
-              <p className="evento-desc">{evento.descricao}</p>
+              return (
+                <article key={evento.id} className="card-evento">
+                  <div className="evento-image-box">
+                    <img src={evento.imagem} alt={evento.titulo} loading="lazy" />
+                    <span className="evento-badge-categoria">{evento.categoria}</span>
+                    <span className="evento-badge-data">{evento.data}</span>
+                  </div>
 
-              <button
-                type="button"
-                className={`btn-inscrever ${estaInscrito ? "inscrito" : ""}`}
-                onClick={() => toggleInscricao(evento.id)}
-              >
-                {estaInscrito ? "✓ Presença Confirmada" : "Garantir Vaga"}
-              </button>
-            </article>
-          );
-        })}
-      </div>
-    </section>
+                  <div className="evento-body">
+                    <div className="evento-info-meta">
+                      <span>🕒 {evento.horario}</span>
+                      <span>📍 {evento.local}</span>
+                    </div>
+
+                    <h3>{evento.titulo}</h3>
+                    <p className="evento-desc">{evento.descricao}</p>
+
+                    <div className="evento-footer">
+                      <span className="evento-vagas">
+                        {estaInscrito ? "Vaga confirmada" : `${evento.vagasRestantes} vagas restantes`}
+                      </span>
+
+                      <button
+                        type="button"
+                        className={`btn-inscrever ${estaInscrito ? "inscrito" : ""}`}
+                        onClick={() => toggleInscricao(evento.id)}
+                      >
+                        {estaInscrito ? "✓ Presença Garantida" : "Garantir Vaga"}
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

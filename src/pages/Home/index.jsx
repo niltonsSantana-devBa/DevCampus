@@ -1,105 +1,179 @@
 import { Link } from "react-router-dom";
+import { destaques } from "../../data/destaques.js";
 import "./styles.css";
 
-const destaques = [
+const metricas = [
+  { valor: "Nota 5", legenda: "Nota máxima no MEC", detalhe: "Recredenciamento institucional" },
+  { valor: "94%", legenda: "Empregabilidade", detalhe: "Alunos contratados até 6 meses após formados" },
+  { valor: "+30", legenda: "Laboratórios modernos", detalhe: "Tecnologia e simulação prática" },
+  { valor: "+15.000", legenda: "Alunos & Egressos", detalhe: "Histórias de sucesso no mercado" },
+];
+
+const diferenciais = [
   {
-    numero: "01",
-    titulo: "Cursos para o futuro",
-    descricao: "Encontre uma graduação que combina com seus planos.",
-    link: "/cursos",
-    acao: "Conheça os cursos",
+    icone: "🎓",
+    titulo: "Corpo Docente Especializado",
+    descricao: "Mais de 80% dos professores são mestres e doutores com sólida experiência de mercado.",
   },
   {
-    numero: "02",
-    titulo: "Seu próximo passo",
-    descricao: "Veja as formas de ingresso e comece sua jornada.",
-    link: "/ingresso",
-    acao: "Saiba como ingressar",
+    icone: "🔬",
+    titulo: "Prática Desde o 1º Semestre",
+    descricao: "Laboratórios modernos, clínicas-escola e projetos reais integrados ao currículo.",
   },
   {
-    numero: "03",
-    titulo: "Vida no campus",
-    descricao: "Acompanhe as novidades e os eventos da comunidade.",
-    link: "/noticias",
-    acao: "Ver notícias",
+    icone: "💼",
+    titulo: "Central de Carreiras & Estágios",
+    descricao: "Convênios com mais de 250 empresas de tecnologia, saúde, finanças e serviços.",
+  },
+  {
+    icone: "🌍",
+    titulo: "Programas de Extensão & Inovação",
+    descricao: "Empresas juniores, hackathons, iniciação científica e apoio a startups.",
   },
 ];
 
 export function Home() {
   return (
     <main className="home-page">
+      {/* Hero Banner Universitário */}
       <section className="home-hero">
         <div className="home-hero-inner">
           <div className="home-hero-copy">
-            <span className="home-eyebrow">Faculdade Horizonte</span>
-            <h1>
-              Seu futuro começa com uma <span>nova possibilidade.</span>
+            <div className="home-hero-badges">
+              <span className="badge-mec">★ NOTA MÁXIMA NO MEC</span>
+              <span className="badge-vestibular">VESTIBULAR 2026/2</span>
+            </div>
+
+            <h1 className="home-hero-title">
+              O conhecimento que você busca. O <span>futuro que você merece.</span>
             </h1>
-            <p>
-              Conhecimento, oportunidades e apoio para você transformar seus
-              planos em conquistas.
+
+            <p className="home-hero-subtitle">
+              Na Faculdade Horizonte, unimos excelência acadêmica, laboratórios modernos
+              e conexões com o mercado de trabalho para você protagonizar sua carreira.
             </p>
+
             <div className="home-hero-actions">
-              <Link className="button-primary" to="/cursos">
-                Encontre seu curso
+              <Link className="button-accent" to="/cursos">
+                Explorar Cursos de Graduação
               </Link>
               <Link className="button-secondary" to="/ingresso">
-                Como ingressar
+                Formas de Ingresso & Bolsas
               </Link>
             </div>
-            <div className="home-hero-note">
-              <span aria-hidden="true">✦</span>
-              Uma comunidade pronta para crescer com você
+
+            <div className="home-hero-guarantee">
+              <span>✓ Inscrição gratuita no vestibular online</span>
+              <span>✓ Bolsas de até 100% pelo ENEM</span>
             </div>
           </div>
-          <div className="home-hero-art" aria-hidden="true">
-            <div className="home-art-outline" />
-            <div className="home-art-panel">
-              <span className="home-art-label">APRENDER · CRIAR · EVOLUIR</span>
-              <span className="home-art-symbol">H</span>
-              <span className="home-art-caption">O conhecimento abre caminhos.</span>
+
+          <div className="home-hero-visual">
+            <div className="home-hero-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80"
+                alt="Estudantes no campus da Faculdade Horizonte"
+                className="home-hero-image"
+              />
+              <div className="home-floating-card home-card-rating">
+                <span className="floating-card-stars">★★★★★</span>
+                <strong>MEC Nota 5</strong>
+                <small>Excelência comprovada</small>
+              </div>
+              <div className="home-floating-card home-card-employability">
+                <span className="floating-card-icon">🚀</span>
+                <strong>94% de Empregabilidade</strong>
+                <small>Inserção rápida no mercado</small>
+              </div>
             </div>
-            <span className="home-art-spark home-art-spark-one">✦</span>
-            <span className="home-art-spark home-art-spark-two">✦</span>
           </div>
-        </div>
-        <div className="home-hero-bottom" aria-hidden="true">
-          HORIZONTE <span>—</span> EDUCAÇÃO QUE TRANSFORMA
         </div>
       </section>
 
-      <section className="home-highlights">
-        <div className="home-section-heading">
-          <span className="eyebrow">Explore a Horizonte</span>
-          <h2>Um caminho que começa com você.</h2>
+      {/* Faixa de Métricas Acadêmicas */}
+      <section className="home-metrics-bar">
+        <div className="home-metrics-inner">
+          {metricas.map((m) => (
+            <div className="metric-item" key={m.legenda}>
+              <strong className="metric-val">{m.valor}</strong>
+              <span className="metric-label">{m.legenda}</span>
+              <small className="metric-detail">{m.detalhe}</small>
+            </div>
+          ))}
         </div>
-        <div className="home-highlight-grid">
+      </section>
+
+      {/* Seção de Destaques com Imagens */}
+      <section className="home-highlights-section">
+        <div className="home-section-header">
+          <span className="eyebrow">Explore o Campus</span>
+          <h2>Por que estudar na Faculdade Horizonte?</h2>
+          <p>
+            Uma instituição estruturada para potencializar suas habilidades teóricas,
+            técnicas e humanas.
+          </p>
+        </div>
+
+        <div className="home-highlights-grid">
           {destaques.map((item) => (
-            <article className="home-highlight-card" key={item.numero}>
-              <span className="home-highlight-number">{item.numero}</span>
-              <h3>{item.titulo}</h3>
-              <p>{item.descricao}</p>
-              <Link to={item.link}>
-                {item.acao} <span aria-hidden="true">→</span>
-              </Link>
+            <article className="home-card" key={item.numero}>
+              <div className="home-card-image-box">
+                <img src={item.imagem} alt={item.titulo} loading="lazy" />
+                <span className="home-card-tag">{item.tag}</span>
+              </div>
+              <div className="home-card-body">
+                <span className="home-card-number">{item.numero}</span>
+                <h3>{item.titulo}</h3>
+                <p>{item.descricao}</p>
+                <Link to={item.link} className="home-card-link">
+                  {item.acao} <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="home-about">
-        <div>
-          <span className="eyebrow">Mais do que uma faculdade</span>
-          <h2>Um lugar para construir o que vem pela frente.</h2>
+      {/* Diferenciais Acadêmicos */}
+      <section className="home-differentials-section">
+        <div className="home-differentials-inner">
+          <div className="differentials-header">
+            <span className="eyebrow">Diferenciais Institucionais</span>
+            <h2>Tudo o que você precisa para se destacar no mercado</h2>
+          </div>
+
+          <div className="differentials-grid">
+            {diferenciais.map((dif) => (
+              <div className="diff-card" key={dif.titulo}>
+                <span className="diff-icon" aria-hidden="true">{dif.icone}</span>
+                <h3>{dif.titulo}</h3>
+                <p>{dif.descricao}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <p>
-          Na Faculdade Horizonte, sua vontade de aprender encontra espaço,
-          orientação e novas oportunidades. Conheça nossa história e descubra
-          tudo o que podemos fazer juntos.
-        </p>
-        <Link className="home-about-link" to="/sobre">
-          Conheça a Horizonte <span aria-hidden="true">→</span>
-        </Link>
+      </section>
+
+      {/* Banner de Chamada para Ação (CTA Vestibular) */}
+      <section className="home-cta-banner">
+        <div className="home-cta-inner">
+          <div className="home-cta-copy">
+            <span className="eyebrow" style={{ color: "#ffedd5" }}>Vestibular 2026/2</span>
+            <h2>Dê o próximo passo na sua trajetória profissional</h2>
+            <p>
+              Inscreva-se no vestibular online gratuito ou aproveite a sua nota do ENEM
+              para conquistar bolsas com até 100% de desconto.
+            </p>
+            <div className="home-cta-actions">
+              <Link className="button-accent" to="/ingresso">
+                Inscrever-se no Vestibular
+              </Link>
+              <Link className="button-secondary" to="/contato">
+                Falar com a Secretaria
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );

@@ -1,0 +1,245 @@
+.ingresso-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.ingresso-hero {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: #ffffff;
+  padding: 60px 0 65px;
+  text-align: center;
+}
+
+.ingresso-hero-inner {
+  width: min(850px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.ingresso-hero h1 {
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 16px 0 16px;
+  color: #ffffff;
+}
+
+.ingresso-hero p {
+  color: #cbd5e1;
+  font-size: 1.12rem;
+  line-height: 1.7;
+  margin: 0 auto;
+}
+
+.ingresso-content {
+  padding: 50px 0 90px;
+  background-color: var(--color-bg);
+}
+
+.ingresso-content-inner {
+  width: min(var(--content-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* Grid de Seleção de Modalidades */
+.ingresso-modalidades-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.modalidade-card {
+  background: #ffffff;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 20px;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 200ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modalidade-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.modalidade-card.ativo {
+  border-color: var(--color-accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 2px var(--color-accent), var(--shadow-lg);
+}
+
+.modalidade-icone {
+  font-size: 2.2rem;
+}
+
+.modalidade-tag-desconto {
+  display: inline-block;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 8px;
+}
+
+.modalidade-textos h3 {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.modalidade-textos p {
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Detalhe da Modalidade Selecionada */
+.modalidade-detalhe-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.detalhe-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.detalhe-cabecalho h2 {
+  font-size: 1.85rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  margin: 6px 0 10px;
+}
+
+.detalhe-desc {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0;
+}
+
+.detalhe-beneficio-pill {
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-accent-border);
+  color: var(--color-accent);
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.detalhe-passo-a-passo {
+  padding: 30px 0;
+}
+
+.detalhe-passo-a-passo h3 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 800;
+  margin: 0 0 20px;
+}
+
+.passos-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+
+.passos-lista li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--color-surface-subtle);
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.96rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.passo-numero {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.88rem;
+  flex-shrink: 0;
+}
+
+.detalhe-documentos {
+  background: #fefce8;
+  border: 1px solid #fef08a;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  color: #854d0e;
+  margin-bottom: 30px;
+}
+
+.detalhe-documentos strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.detalhe-documentos p {
+  margin: 0;
+}
+
+.detalhe-acoes {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.alerta-inscricao {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+@media (max-width: 992px) {
+  .ingresso-modalidades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ingresso-modalidades-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalidade-detalhe-card {
+    padding: 24px 20px;
+  }
+}
