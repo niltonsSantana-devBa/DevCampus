@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../style.css";
+import "./style.css";
 
 export function Ingresso() {
   const [modoIngresso, setModoIngresso] = useState("");

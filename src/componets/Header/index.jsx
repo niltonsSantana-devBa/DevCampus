@@ -1,26 +1,38 @@
-import { Link, NavLink } from 'react-router-dom'
-import './styles.css'
-import logo from '../../assets/logo.png'
+import { Link, NavLink } from "react-router-dom";
+import "./styles.css";
 
-export function Header(){
-    return(
-        <header>
-            <div>
-                <Link to="/">
-                <img src= {logo} alt="Logo" />
-                <span>Facudade Horizonte</span>
-                </Link>
+const links = [
+  { to: "/", label: "Início", end: true },
+  { to: "/sobre", label: "Sobre" },
+  { to: "/cursos", label: "Cursos" },
+  { to: "/ingresso", label: "Ingresso" },
+  { to: "/noticias", label: "Notícias" },
+  { to: "/contato", label: "Contato" },
+];
 
-                <nav>
-                    <NavLink to="/">Home</NavLink>
-                    <NavLink to="/sobre">Sobre</NavLink>
-                    <NavLink to="/ingresso">Ingresso</NavLink>
-                    <NavLink to="/cursos">Cursos</NavLink>
-                    <NavLink to="/contato">Contato</NavLink>
-                    <NavLink to="/Noticias">Notícias</NavLink>
-
-                </nav>
-            </div>
-        </header>
-    )
+export function Header() {
+  return (
+    <header className="site-header">
+      <div className="site-header-inner">
+        <Link className="site-brand" to="/" aria-label="Faculdade Horizonte - início">
+          <span className="site-brand-mark" aria-hidden="true">H</span>
+          <span className="site-brand-name">
+            Faculdade <strong>Horizonte</strong>
+          </span>
+        </Link>
+        <nav className="site-nav" aria-label="Navegação principal">
+          {links.map(({ to, label, end }) => (
+            <NavLink
+              key={to}
+              to={to}
+              end={end}
+              className={({ isActive }) => `site-nav-link${isActive ? " active" : ""}`}
+            >
+              {label}
+            </NavLink>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
 }

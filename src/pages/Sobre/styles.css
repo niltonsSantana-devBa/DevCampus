@@ -1,0 +1,27 @@
+.sobre-container {
+  width: min(900px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 90px 0 100px;
+}
+
+.sobre-container h1 {
+  margin: 12px 0 18px;
+  color: var(--color-dark);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  letter-spacing: -0.05em;
+}
+
+.sobre-container p {
+  max-width: 760px;
+  margin: 0 0 28px;
+  color: var(--color-text-muted);
+  font-size: 1.12rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 480px) {
+  .sobre-container {
+    width: calc(100% - 32px);
+    padding: 64px 0 76px;
+  }
+}

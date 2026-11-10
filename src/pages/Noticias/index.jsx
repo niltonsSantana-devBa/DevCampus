@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../style.css";
+import "./style.css";
 
 const EVENTOS_DADOS = [
   {
@@ -10,7 +10,6 @@ const EVENTOS_DADOS = [
     horario: "17:30",
     local: "Auditório Bloco B",
     descricao: "Alinhamento das próximas apresentações do campus e ensaio aberto. Traga seu instrumento ou venha apenas curtir o som!",
-    badgeColor: "#8b5cf6"
   },
   {
     id: 2,
@@ -20,7 +19,6 @@ const EVENTOS_DADOS = [
     horario: "09:00",
     local: "Laboratório de Inovação 04",
     descricao: "Maratona de código para criar algoritmos de geração de receitas sustentáveis, harmonização de pratos e combate ao desperdício.",
-    badgeColor: "#ec4899"
   },
   {
     id: 3,
@@ -30,7 +28,6 @@ const EVENTOS_DADOS = [
     horario: "13:00",
     local: "Ginásio Poliesportivo",
     descricao: "Abertura do torneio do campus com modalidades tradicionais e arena gamer com partidas ao vivo de Valorant e FIFA.",
-    badgeColor: "#10b981"
   },
   {
     id: 4,
@@ -40,7 +37,6 @@ const EVENTOS_DADOS = [
     horario: "19:30",
     local: "Praça Central do Campus",
     descricao: "Observação guiada de corpos celestes na praça central + óculos de realidade virtual simulando caminhada em Marte.",
-    badgeColor: "#3b82f6"
   },
   {
     id: 5,
@@ -50,7 +46,6 @@ const EVENTOS_DADOS = [
     horario: "16:00",
     local: "Espaço Coworking",
     descricao: "Bate-papo exclusivo com ex-alunos que transformaram projetos acadêmicos em empresas milionárias.",
-    badgeColor: "#f59e0b"
   }
 ];
 
@@ -101,10 +96,7 @@ export function EventosCampus() {
           return (
             <article key={evento.id} className="card-evento">
               <div className="card-evento-header">
-                <span 
-                  className="badge-categoria" 
-                  style={{ backgroundColor: evento.badgeColor }}
-                >
+                <span className="badge-categoria">
                   {evento.categoria}
                 </span>
                 <span className="evento-data">{evento.data} • {evento.horario}</span>

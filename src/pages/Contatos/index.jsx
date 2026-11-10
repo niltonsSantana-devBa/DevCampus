@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../style.css";
+import "./style.css";
 
 // Lista de alunos fictícios registrados
 const ALUNOS_REGISTRADOS = [
