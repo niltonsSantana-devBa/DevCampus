@@ -1,21 +1,25 @@
 import { Link } from "react-router-dom";
+import logoHorizontal from "../../assets/01_logo_principal_horizontal.png";
+import ideiasIcon from "../../assets/02_ideias.png";
+import livrosIcon from "../../assets/01_livros.png";
+import parceriasIcon from "../../assets/03_parcerias.png";
 import "./styles.css";
 
 const pilares = [
   {
     titulo: "Ensino de Excelência",
     descricao: "Metodologias ativas, professores mestres e doutores atuantes no mercado e constante atualização pedagógica.",
-    icone: "📚",
+    icone: livrosIcon,
   },
   {
     titulo: "Inovação & Pesquisa",
     descricao: "Incentivo à iniciação científica, bolsas acadêmicas e integração entre laboratórios e empresas parceiras.",
-    icone: "💡",
+    icone: ideiasIcon,
   },
   {
     titulo: "Extensão & Comunidade",
     descricao: "Projetos sociais, clínicas-escola e atendimento à comunidade local que geram impacto real e prático.",
-    icone: "🤝",
+    icone: parceriasIcon,
   },
 ];
 
@@ -56,6 +60,11 @@ export function Sobre() {
       <section className="sobre-historia-section">
         <div className="sobre-historia-inner">
           <div className="sobre-historia-copy">
+            <img
+              className="sobre-logo-horizontal"
+              src={logoHorizontal}
+              alt="Universidade Horizonte"
+            />
             <span className="eyebrow">Quem Somos</span>
             <h2>Construindo trajetórias de sucesso com responsabilidade e excelência</h2>
             <p>
@@ -107,7 +116,7 @@ export function Sobre() {
           <div className="pilares-grid">
             {pilares.map((p) => (
               <div className="pilar-card" key={p.titulo}>
-                <span className="pilar-icone">{p.icone}</span>
+                <img className="pilar-icone" src={p.icone} alt="" aria-hidden="true" />
                 <h3>{p.titulo}</h3>
                 <p>{p.descricao}</p>
               </div>

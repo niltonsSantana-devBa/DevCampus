@@ -169,6 +169,19 @@
   margin-bottom: 12px;
 }
 
+.evento-info-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.evento-info-meta img {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  object-fit: contain;
+}
+
 .card-evento h3 {
   margin: 0 0 10px;
   color: var(--color-primary);

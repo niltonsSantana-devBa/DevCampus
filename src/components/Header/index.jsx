@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "../../data/navigation.js";
+import telefoneIcon from "../../assets/04_telefone.png";
+import logoVertical from "../../assets/02_logo_vertical.png";
 import "./styles.css";
 
 export function Header() {
@@ -13,7 +15,10 @@ export function Header() {
             <span>Inscrições abertas com bolsas de até 100% pelo ENEM</span>
           </div>
           <div className="topbar-links">
-            <span className="topbar-contact">📞 (11) 3450-8000</span>
+            <span className="topbar-contact">
+              <img src={telefoneIcon} alt="" aria-hidden="true" />
+              (71) 3450-8000
+            </span>
             <span className="topbar-divider">|</span>
             <Link to="/contato" className="topbar-link">Portal do Aluno</Link>
           </div>
@@ -23,8 +28,8 @@ export function Header() {
       {/* Barra de navegação principal */}
       <div className="site-header-inner">
         <Link className="site-brand" to="/" aria-label="Faculdade Horizonte - início">
-          <div className="site-brand-mark" aria-hidden="true">
-            <span>H</span>
+          <div className="site-brand-mark">
+            <img src={logoVertical} alt="" />
           </div>
           <div className="site-brand-text">
             <span className="site-brand-name">

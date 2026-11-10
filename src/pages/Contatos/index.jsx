@@ -1,5 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { ALUNOS_REGISTRADOS } from "../../data/alunos.js";
+import horarioIcon from "../../assets/08_horario.png";
+import localizacaoIcon from "../../assets/05_localizacao.png";
+import mensagemIcon from "../../assets/06_mensagem.png";
+import telefoneIcon from "../../assets/04_telefone.png";
 import "./styles.css";
 
 export function Contatos() {
@@ -60,7 +64,7 @@ export function Contatos() {
 
               <div className="info-itens-lista">
                 <div className="info-item">
-                  <span className="info-icone">📍</span>
+                  <img className="info-icone" src={localizacaoIcon} alt="" aria-hidden="true" />
                   <div>
                     <strong>Endereço</strong>
                     <p>Av. Universitária, 1500 — Bairro Universitário, SP</p>
@@ -68,23 +72,23 @@ export function Contatos() {
                 </div>
 
                 <div className="info-item">
-                  <span className="info-icone">📞</span>
+                  <img className="info-icone" src={telefoneIcon} alt="" aria-hidden="true" />
                   <div>
                     <strong>Telefone Geral</strong>
-                    <p>(11) 3450-8000</p>
+                    <p>(71) 3450-8000</p>
                   </div>
                 </div>
 
                 <div className="info-item">
-                  <span className="info-icone">💬</span>
+                  <img className="info-icone" src={mensagemIcon} alt="" aria-hidden="true" />
                   <div>
                     <strong>WhatsApp da Secretaria</strong>
-                    <p>(11) 98765-4321</p>
+                    <p>(71) 98765-4321</p>
                   </div>
                 </div>
 
                 <div className="info-item">
-                  <span className="info-icone">🕒</span>
+                  <img className="info-icone" src={horarioIcon} alt="" aria-hidden="true" />
                   <div>
                     <strong>Horário de Funcionamento</strong>
                     <p>Segunda a Sexta: 08h às 21h | Sábado: 08h às 13h</p>
@@ -114,7 +118,6 @@ export function Contatos() {
 
               {formEnviado ? (
                 <div className="mensagem-sucesso">
-                  <span className="sucesso-icone" aria-hidden="true">✅</span>
                   <h3>Protocolo de Atendimento Registrado!</h3>
                   <p>
                     Solicitação enviada com sucesso para <strong>{alunoAtual?.nome}</strong> (Matrícula: {alunoAtual?.matricula}).

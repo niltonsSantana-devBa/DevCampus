@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import { destaques } from "../../data/destaques.js";
+import carreiraIcon from "../../assets/15_carreira.png";
+import formacaoIcon from "../../assets/12_formacao.png";
+import mundoIcon from "../../assets/16_mundo.png";
+import pesquisaIcon from "../../assets/14_pesquisa.png";
 import "./styles.css";
 
 const metricas = [
@@ -11,22 +15,22 @@ const metricas = [
 
 const diferenciais = [
   {
-    icone: "🎓",
+    icone: formacaoIcon,
     titulo: "Corpo Docente Especializado",
     descricao: "Mais de 80% dos professores são mestres e doutores com sólida experiência de mercado.",
   },
   {
-    icone: "🔬",
+    icone: pesquisaIcon,
     titulo: "Prática Desde o 1º Semestre",
     descricao: "Laboratórios modernos, clínicas-escola e projetos reais integrados ao currículo.",
   },
   {
-    icone: "💼",
+    icone: carreiraIcon,
     titulo: "Central de Carreiras & Estágios",
     descricao: "Convênios com mais de 250 empresas de tecnologia, saúde, finanças e serviços.",
   },
   {
-    icone: "🌍",
+    icone: mundoIcon,
     titulo: "Programas de Extensão & Inovação",
     descricao: "Empresas juniores, hackathons, iniciação científica e apoio a startups.",
   },
@@ -81,7 +85,7 @@ export function Home() {
                 <small>Excelência comprovada</small>
               </div>
               <div className="home-floating-card home-card-employability">
-                <span className="floating-card-icon">🚀</span>
+                <img className="floating-card-icon" src={carreiraIcon} alt="" aria-hidden="true" />
                 <strong>94% de Empregabilidade</strong>
                 <small>Inserção rápida no mercado</small>
               </div>
@@ -145,7 +149,7 @@ export function Home() {
           <div className="differentials-grid">
             {diferenciais.map((dif) => (
               <div className="diff-card" key={dif.titulo}>
-                <span className="diff-icon" aria-hidden="true">{dif.icone}</span>
+                <img className="diff-icon" src={dif.icone} alt="" aria-hidden="true" />
                 <h3>{dif.titulo}</h3>
                 <p>{dif.descricao}</p>
               </div>
