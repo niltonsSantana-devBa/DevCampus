@@ -63,8 +63,8 @@ export function Footer() {
           <h4 className="footer-heading">Central de Atendimento</h4>
           <div className="footer-contact-info">
             <p><img src={localizacaoIcon} alt="" aria-hidden="true" />Av. Universitária, 1500 — Campus Central</p>
-            <p><img src={telefoneIcon} alt="" aria-hidden="true" />Atendimento: (11) 3450-8000</p>
-            <p><img src={mensagemIcon} alt="" aria-hidden="true" />WhatsApp: (11) 98765-4321</p>
+            <p><img src={telefoneIcon} alt="" aria-hidden="true" />Atendimento: (71) 3450-8000</p>
+            <p><img src={mensagemIcon} alt="" aria-hidden="true" />WhatsApp: (71) 98765-4321</p>
             <p><img src={emailIcon} alt="" aria-hidden="true" />contato@horizonte.edu.br</p>
             <p className="footer-hours"><img src={horarioIcon} alt="" aria-hidden="true" />Seg. a Sex. das 08h às 21h | Sáb. das 08h às 13h</p>
           </div>

@@ -17,7 +17,7 @@ export function Header() {
           <div className="topbar-links">
             <span className="topbar-contact">
               <img src={telefoneIcon} alt="" aria-hidden="true" />
-              (11) 3450-8000
+              (71) 3450-8000
             </span>
             <span className="topbar-divider">|</span>
             <Link to="/contato" className="topbar-link">Portal do Aluno</Link>

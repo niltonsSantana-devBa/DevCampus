@@ -75,7 +75,7 @@ export function Contatos() {
                   <img className="info-icone" src={telefoneIcon} alt="" aria-hidden="true" />
                   <div>
                     <strong>Telefone Geral</strong>
-                    <p>(11) 3450-8000</p>
+                    <p>(71) 3450-8000</p>
                   </div>
                 </div>
 
@@ -83,7 +83,7 @@ export function Contatos() {
                   <img className="info-icone" src={mensagemIcon} alt="" aria-hidden="true" />
                   <div>
                     <strong>WhatsApp da Secretaria</strong>
-                    <p>(11) 98765-4321</p>
+                    <p>(71) 98765-4321</p>
                   </div>
                 </div>
 
