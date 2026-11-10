@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import documentoIcon from "../../assets/09_documento.png";
+import formacaoIcon from "../../assets/12_formacao.png";
+import metaIcon from "../../assets/10_meta.png";
+import atualizarIcon from "../../assets/11_atualizar.png";
+import tarefasIcon from "../../assets/13_tarefas.png";
 import { cursos } from "../../data/cursos.js";
 import "./styles.css";
 
@@ -8,7 +13,7 @@ const modalidades = [
     id: "vestibular",
     titulo: "Vestibular Online 2026",
     subtitulo: "Prova 100% digital e gratuita",
-    icone: "📝",
+    icone: tarefasIcon,
     desconto: "Bolsas de até 50%",
     descricao: "Realize a prova de redação online no conforto da sua casa, no dia e horário que preferir, com resultado divulgado em até 24 horas.",
     passos: [
@@ -22,7 +27,7 @@ const modalidades = [
     id: "enem",
     titulo: "Nota do ENEM",
     subtitulo: "Sua pontuação vale bolsa de estudo",
-    icone: "🎯",
+    icone: metaIcon,
     desconto: "Bolsas de até 100%",
     descricao: "Utilize sua nota do ENEM a partir da edição de 2015. Quanto maior a sua média nas provas, maior o percentual de desconto nas mensalidades durante todo o curso.",
     passos: [
@@ -36,7 +41,7 @@ const modalidades = [
     id: "transferencia",
     titulo: "Transferência de Faculdade",
     subtitulo: "Aproveite matérias já cursadas",
-    icone: "🔄",
+    icone: atualizarIcon,
     desconto: "Desconto especial de transferência",
     descricao: "Transfira seu curso para a Faculdade Horizonte sem burocracia. Nossa coordenação faz a análise e equivalência rápida da sua grade curricular anterior.",
     passos: [
@@ -50,7 +55,7 @@ const modalidades = [
     id: "segunda-graduacao",
     titulo: "Segunda Graduação",
     subtitulo: "Ingresso direto para graduados",
-    icone: "🎓",
+    icone: formacaoIcon,
     desconto: "30% de desconto fixo",
     descricao: "Já possui diploma de ensino superior? Entre direto sem vestibular, amplie sua área de atuação profissional e conclua sua segunda graduação em tempo reduzido.",
     passos: [
@@ -123,7 +128,7 @@ export function Ingresso() {
                     setPreCadastroEnviado(false);
                   }}
                 >
-                  <span className="modalidade-icone" aria-hidden="true">{item.icone}</span>
+                  <img className="modalidade-icone" src={item.icone} alt="" aria-hidden="true" />
                   <div className="modalidade-textos">
                     <span className="modalidade-tag-desconto">{item.desconto}</span>
                     <h3>{item.titulo}</h3>
@@ -160,7 +165,10 @@ export function Ingresso() {
             </div>
 
             <div className="detalhe-documentos">
-              <strong>📋 Documentação básica exigida:</strong>
+              <strong>
+                <img src={documentoIcon} alt="" aria-hidden="true" />
+                Documentação básica exigida:
+              </strong>
               <p>{modalidadeAtiva.documentos}</p>
             </div>
 

@@ -108,7 +108,6 @@ export function Cursos() {
 
           {cursosFiltrados.length === 0 && (
             <div className="cursos-sem-resultado">
-              <span className="sem-resultado-icone">🔍</span>
               <h3>Nenhum curso encontrado</h3>
               <p>Tente buscar com outro termo ou selecione "Todas" as áreas.</p>
               <button

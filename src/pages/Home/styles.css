@@ -137,7 +137,9 @@
 }
 
 .floating-card-icon {
-  font-size: 1.3rem;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 
 .home-card-employability strong {
@@ -376,9 +378,10 @@
 }
 
 .diff-icon {
-  font-size: 2.2rem;
-  display: inline-block;
+  width: 48px;
+  height: 48px;
   margin-bottom: 16px;
+  object-fit: contain;
 }
 
 .diff-card h3 {

@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import emailIcon from "../../assets/07_email.png";
+import horarioIcon from "../../assets/08_horario.png";
+import localizacaoIcon from "../../assets/05_localizacao.png";
+import mensagemIcon from "../../assets/06_mensagem.png";
+import telefoneIcon from "../../assets/04_telefone.png";
 import logoVertical from "../../assets/02_logo_vertical.png";
 import "./styles.css";
 
@@ -57,11 +62,11 @@ export function Footer() {
         <div className="footer-col">
           <h4 className="footer-heading">Central de Atendimento</h4>
           <div className="footer-contact-info">
-            <p>📍 Av. Universitária, 1500 — Campus Central</p>
-            <p>📞 Atendimento: (11) 3450-8000</p>
-            <p>💬 WhatsApp: (11) 98765-4321</p>
-            <p>✉️ contato@horizonte.edu.br</p>
-            <p className="footer-hours">🕒 Seg. a Sex. das 08h às 21h | Sáb. das 08h às 13h</p>
+            <p><img src={localizacaoIcon} alt="" aria-hidden="true" />Av. Universitária, 1500 — Campus Central</p>
+            <p><img src={telefoneIcon} alt="" aria-hidden="true" />Atendimento: (11) 3450-8000</p>
+            <p><img src={mensagemIcon} alt="" aria-hidden="true" />WhatsApp: (11) 98765-4321</p>
+            <p><img src={emailIcon} alt="" aria-hidden="true" />contato@horizonte.edu.br</p>
+            <p className="footer-hours"><img src={horarioIcon} alt="" aria-hidden="true" />Seg. a Sex. das 08h às 21h | Sáb. das 08h às 13h</p>
           </div>
         </div>
       </div>

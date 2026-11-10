@@ -51,6 +51,21 @@
   flex-shrink: 0;
 }
 
+.topbar-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.topbar-contact img {
+  width: 18px;
+  height: 18px;
+  padding: 2px;
+  border-radius: 50%;
+  background: #ffffff;
+  object-fit: contain;
+}
+
 .topbar-divider {
   color: rgba(255, 255, 255, 0.2);
 }

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { EVENTOS_DADOS } from "../../data/eventos.js";
+import horarioIcon from "../../assets/08_horario.png";
+import localizacaoIcon from "../../assets/05_localizacao.png";
 import "./styles.css";
 
 export function Noticias() {
@@ -67,8 +69,8 @@ export function Noticias() {
 
                   <div className="evento-body">
                     <div className="evento-info-meta">
-                      <span>🕒 {evento.horario}</span>
-                      <span>📍 {evento.local}</span>
+                      <span><img src={horarioIcon} alt="" aria-hidden="true" />{evento.horario}</span>
+                      <span><img src={localizacaoIcon} alt="" aria-hidden="true" />{evento.local}</span>
                     </div>
 
                     <h3>{evento.titulo}</h3>

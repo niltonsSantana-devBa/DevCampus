@@ -95,10 +95,10 @@
 }
 
 .info-icone {
-  font-size: 1.4rem;
-  line-height: 1;
-  flex-shrink: 0;
-  margin-top: 2px;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  object-fit: contain;
 }
 
 .info-item strong {
@@ -258,12 +258,6 @@
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
   border-radius: var(--radius-lg);
-}
-
-.sucesso-icone {
-  font-size: 3rem;
-  display: block;
-  margin-bottom: 12px;
 }
 
 .mensagem-sucesso h3 {
