@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoHorizontal from "../../assets/01_logo_principal_horizontal.png";
 import "./styles.css";
 
 const pilares = [
@@ -56,6 +57,11 @@ export function Sobre() {
       <section className="sobre-historia-section">
         <div className="sobre-historia-inner">
           <div className="sobre-historia-copy">
+            <img
+              className="sobre-logo-horizontal"
+              src={logoHorizontal}
+              alt="Universidade Horizonte"
+            />
             <span className="eyebrow">Quem Somos</span>
             <h2>Construindo trajetórias de sucesso com responsabilidade e excelência</h2>
             <p>

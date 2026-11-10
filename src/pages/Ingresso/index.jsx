@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { cursos } from "../../data/cursos.js";
 import "./styles.css";
 
 const modalidades = [
@@ -64,8 +65,30 @@ const modalidades = [
 export function Ingresso() {
   const [modalidadeAtivaId, setModalidadeAtivaId] = useState("vestibular");
   const [inscricaoIniciada, setInscricaoIniciada] = useState(false);
+  const [preCadastroEnviado, setPreCadastroEnviado] = useState(false);
+  const [cpf, setCpf] = useState("");
 
   const modalidadeAtiva = modalidades.find((m) => m.id === modalidadeAtivaId) || modalidades[0];
+  const hoje = new Date();
+  const dataMaximaNascimento = [
+    hoje.getFullYear(),
+    String(hoje.getMonth() + 1).padStart(2, "0"),
+    String(hoje.getDate()).padStart(2, "0"),
+  ].join("-");
+
+  function formatarCpf(valor) {
+    const numeros = valor.replace(/\D/g, "").slice(0, 11);
+    return numeros
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d)/, "$1.$2")
+      .replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+  }
+
+  function enviarPreCadastro(event) {
+    event.preventDefault();
+    setCpf("");
+    setPreCadastroEnviado(true);
+  }
 
   return (
     <main className="ingresso-page">
@@ -97,6 +120,7 @@ export function Ingresso() {
                   onClick={() => {
                     setModalidadeAtivaId(item.id);
                     setInscricaoIniciada(false);
+                    setPreCadastroEnviado(false);
                   }}
                 >
                   <span className="modalidade-icone" aria-hidden="true">{item.icone}</span>
@@ -142,16 +166,82 @@ export function Ingresso() {
 
             <div className="detalhe-acoes">
               {inscricaoIniciada ? (
-                <div className="alerta-inscricao">
-                  <span>✅ Solicitação iniciada para <strong>{modalidadeAtiva.titulo}</strong>! Nossa equipe entrará em contato via e-mail e WhatsApp com o link de acesso.</span>
-                </div>
+                <section className="pre-cadastro" aria-labelledby="pre-cadastro-titulo">
+                  {preCadastroEnviado ? (
+                    <div className="alerta-inscricao" role="status">
+                      Pré-cadastro preenchido com sucesso. Como o site ainda não tem integração
+                      com um sistema acadêmico, seus dados não foram enviados nem salvos.
+                    </div>
+                  ) : (
+                    <>
+                      <h3 id="pre-cadastro-titulo">Pré-cadastro para ingresso</h3>
+                      <p className="pre-cadastro-intro">
+                        Informe os dados do futuro aluno para continuar com a inscrição em{" "}
+                        <strong>{modalidadeAtiva.titulo}</strong>.
+                      </p>
+                      <form className="pre-cadastro-form" onSubmit={enviarPreCadastro}>
+                        <label className="campo-pre-cadastro">
+                          Nome completo
+                          <input
+                            type="text"
+                            name="nome"
+                            autoComplete="name"
+                            placeholder="Digite o nome completo"
+                            required
+                          />
+                        </label>
+                        <label className="campo-pre-cadastro">
+                          Data de nascimento
+                          <input
+                            type="date"
+                            name="dataNascimento"
+                            autoComplete="bday"
+                            max={dataMaximaNascimento}
+                            required
+                          />
+                        </label>
+                        <label className="campo-pre-cadastro">
+                          CPF
+                          <input
+                            type="text"
+                            name="cpf"
+                            inputMode="numeric"
+                            autoComplete="off"
+                            placeholder="000.000.000-00"
+                            value={cpf}
+                            onChange={(event) => setCpf(formatarCpf(event.target.value))}
+                            pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                            title="Informe um CPF com 11 números."
+                            required
+                          />
+                        </label>
+                        <label className="campo-pre-cadastro">
+                          Curso de escolha
+                          <select name="curso" defaultValue="" required>
+                            <option value="" disabled>Selecione um curso</option>
+                            {cursos.map((curso) => (
+                              <option key={curso.id} value={curso.id}>{curso.nome}</option>
+                            ))}
+                          </select>
+                        </label>
+                        <p className="pre-cadastro-aviso">
+                          Este formulário é demonstrativo: os dados não são enviados nem
+                          armazenados neste site.
+                        </p>
+                        <button type="submit" className="button-accent">
+                          Continuar pré-cadastro
+                        </button>
+                      </form>
+                    </>
+                  )}
+                </section>
               ) : (
                 <button
                   type="button"
                   className="button-accent"
                   onClick={() => setInscricaoIniciada(true)}
                 >
-                  Iniciar Inscrição em {modalidadeAtiva.titulo}
+                  Fazer pré-cadastro
                 </button>
               )}
               <Link to="/contato" className="button-secondary">

@@ -228,6 +228,68 @@
   flex: 1;
 }
 
+.pre-cadastro {
+  flex: 1 1 100%;
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-subtle);
+}
+
+.pre-cadastro h3 {
+  margin: 0 0 6px;
+  color: var(--color-primary);
+  font-size: 1.35rem;
+}
+
+.pre-cadastro-intro {
+  margin: 0 0 22px;
+  color: var(--color-text-muted);
+}
+
+.pre-cadastro-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.campo-pre-cadastro {
+  display: grid;
+  gap: 7px;
+  color: var(--color-primary);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.campo-pre-cadastro input,
+.campo-pre-cadastro select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  color: var(--color-text);
+  font-weight: 400;
+}
+
+.campo-pre-cadastro input:focus,
+.campo-pre-cadastro select:focus {
+  border-color: var(--color-accent);
+  outline: 2px solid var(--color-accent-border);
+}
+
+.pre-cadastro-aviso {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+}
+
+.pre-cadastro-form .button-accent {
+  justify-self: start;
+}
+
 @media (max-width: 992px) {
   .ingresso-modalidades-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -241,5 +303,21 @@
 
   .modalidade-detalhe-card {
     padding: 24px 20px;
+  }
+
+  .pre-cadastro {
+    padding: 22px 18px;
+  }
+
+  .pre-cadastro-form {
+    grid-template-columns: 1fr;
+  }
+
+  .pre-cadastro-aviso {
+    grid-column: auto;
+  }
+
+  .pre-cadastro-form .button-accent {
+    width: 100%;
   }
 }

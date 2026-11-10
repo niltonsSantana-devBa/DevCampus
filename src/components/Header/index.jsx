@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "../../data/navigation.js";
+import logoVertical from "../../assets/02_logo_vertical.png";
 import "./styles.css";
 
 export function Header() {
@@ -23,8 +24,8 @@ export function Header() {
       {/* Barra de navegação principal */}
       <div className="site-header-inner">
         <Link className="site-brand" to="/" aria-label="Faculdade Horizonte - início">
-          <div className="site-brand-mark" aria-hidden="true">
-            <span>H</span>
+          <div className="site-brand-mark">
+            <img src={logoVertical} alt="" />
           </div>
           <div className="site-brand-text">
             <span className="site-brand-name">

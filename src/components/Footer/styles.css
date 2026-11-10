@@ -28,16 +28,19 @@
 }
 
 .footer-brand-mark {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  place-items: center;
-  border-radius: 8px;
-  background: var(--color-accent);
-  color: #ffffff;
-  font-family: Georgia, serif;
-  font-size: 1.4rem;
-  font-weight: 800;
+  display: block;
+  width: 42px;
+  height: 25px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.footer-brand-mark img {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .footer-brand-name {

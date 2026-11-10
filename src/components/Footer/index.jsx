@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoVertical from "../../assets/02_logo_vertical.png";
 import "./styles.css";
 
 export function Footer() {
@@ -10,7 +11,9 @@ export function Footer() {
         {/* Coluna 1: Marca & Institucional */}
         <div className="footer-col footer-col-brand">
           <Link className="footer-brand" to="/">
-            <span className="footer-brand-mark">H</span>
+            <span className="footer-brand-mark">
+              <img src={logoVertical} alt="" />
+            </span>
             <span className="footer-brand-name">
               Faculdade <strong>Horizonte</strong>
             </span>
