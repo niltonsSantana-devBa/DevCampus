@@ -1,5 +1,8 @@
 # Faculdade Horizont
 # Desenvolvido por Robert Cefas e Nilton Sacramento
+Nilton Sacramento - Início, Sobre e Cursos 
+Robert Cefas- Ingresso, Noticias e Contato
+
 
 Site institucional demonstrativo da Faculdade Horizonte, desenvolvido para apresentar a instituição, seus cursos, formas de ingresso e canais de atendimento. O projeto é uma aplicação web responsiva em React, com navegação entre páginas feita pelo React Router.
 
